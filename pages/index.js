@@ -12,9 +12,23 @@ const graphcms = new GraphQLClient(
 const QUERY = gql`
 {
   posts {
+    id
+    slug
     title
+    createdAt
+    content {
+      html
+    }
+    author {
+      id
+      name
+    }
+    coverPhoto {
+      url
+    }
   }
 }
+
 `
 
 // Fetch Request
